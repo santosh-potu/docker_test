@@ -14,3 +14,6 @@ docker run -t -e MYSQL_HOST='172.17.0.03'  \
 >  -e MYSQL_DB='docker_test' \
 >  php_test
 
+Docker access local DB
+
+(in linux type ip addr show and look for the docker0 ip). it will be 172.17.0.1
