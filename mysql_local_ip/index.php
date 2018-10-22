@@ -6,7 +6,7 @@ $mysql_db = getenv('MYSQL_DB');
 
 echo " EnvironmentVariables $mysql_host,$mysql_user,$mysql_pwd,$mysql_db <br/>";
 
-$dsn = "mysql:host=$mysql_host;dbname=$mysql_db";
+$dsn = "mysql:host=$mysql_host;port=3306;dbname=$mysql_dbl;charset=utf8";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
