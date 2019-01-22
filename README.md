@@ -58,3 +58,13 @@ docker rm $(docker ps -aq)
 
 Remove all images
 docker rmi $(docker images -q)
+
+// to remove all running containers
+docker-compose stop
+
+docker container stop $(docker ps -aq)
+
+docker container rm $(docker ps -aq)
+
+# remove all images
+docker rmi $(docker images -q)
