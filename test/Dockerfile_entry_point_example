@@ -1,0 +1,9 @@
+FROM ubuntu:16.04
+ENV PARAM "My Parameter"
+
+ENTRYPOINT "hello world1"
+ENTRYPOINT "hello world2"
+
+ENTRYPOINT ["hello world3"]
+
+CMD ["Hello world4"]
