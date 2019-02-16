@@ -5,7 +5,9 @@ ENTRYPOINT "hello world1\n"
 ENTRYPOINT "hello world2 $PARAM \n"
 ENTRYPOINT "hello world5 $PARAM \n"
 
-#ENTRYPOINT ["hello world3 \n"]  # last entry point & last CMD is calculated
-ENTRYPOINT ["echo", "hello world3 \n"]
+
+ENTRYPOINT ["hello world3 \n"]  
+# last entry point & last CMD is calculated
+ENTRYPOINT ["echo", "hello world6 \n"]
 
 CMD ["Hello world4"]
