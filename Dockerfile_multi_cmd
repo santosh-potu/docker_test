@@ -5,8 +5,18 @@ CMD ["echo","-DFOREGROUND"]
 #executes last any extra param passed at run will override this
 CMD ["echo", "test2"]
 
+#When instruction is executed in exec form it calls executable directly, and shell processing does not happen
 ENTRYPOINT ["bin/echo", "test2 $PARAM"]
-ENTRYPOINT ["echo", "test3 $PARAM"]
+
+
+ENTRYPOINT ["echo", "test3 $PARAM ---"]  
+
+#Run bash
+ENTRYPOINT ["/bin/bash", "-c", "echo Hello, $PARAM"]
 
 #works only this/last entry statment when multi entry points used
-#ENTRYPOINT echo "$PARAM test"
+# treated as cmd and will be executed
+ENTRYPOINT echo "$PARAM test1" 
+
+# When instruction is executed in shell form it calls /bin/sh -c <command> under the hood and normal shell processing happens.
+RUN echo "the end" 
