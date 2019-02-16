@@ -24,3 +24,11 @@ RUN echo "the end"
 #ENTRYPOINT ["/bin/echo", "Hello"]
 #this will be executed along with above
 #CMD ["world"]
+
+#Shell form
+#Shell form of ENTRYPOINT ignores any CMD or docker run command line arguments.
+
+#The bottom line
+#Use RUN instructions to build your image by adding layers on top of initial image.
+
+#Prefer ENTRYPOINT to CMD when building executable Docker image and you need a command always to be executed. Additionally use CMD if you need to provide extra #default arguments that could be overwritten from command line when docker container runs.
