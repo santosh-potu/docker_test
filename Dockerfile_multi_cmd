@@ -1,0 +1,12 @@
+FROM ubuntu:16.04
+ENV PARAM "My Parameter"
+
+CMD ["echo","-DFOREGROUND"]
+#executes last any extra param passed at run will override this
+CMD ["echo", "test2"]
+
+ENTRYPOINT ["bin/echo", "test2 $PARAM"]
+ENTRYPOINT ["echo", "test3 $PARAM"]
+
+#works only this/last entry statment when multi entry points used
+#ENTRYPOINT echo "$PARAM test"
