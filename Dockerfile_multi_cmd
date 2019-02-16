@@ -20,3 +20,7 @@ ENTRYPOINT echo "$PARAM test1"
 
 # When instruction is executed in shell form it calls /bin/sh -c <command> under the hood and normal shell processing happens.
 RUN echo "the end" 
+
+#ENTRYPOINT ["/bin/echo", "Hello"]
+#this will be executed along with above
+#CMD ["world"]
