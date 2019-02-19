@@ -68,3 +68,12 @@ docker container rm $(docker ps -aq)
 
 # remove all images
 docker rmi $(docker images -q)
+
+# docker compose
+docker-compose up
+docker-compose build <image_name_from_yml)
+docker-compose stop
+docker-compose down [-v]
+
+# Docker system prune - remove unused data
+docker system prune
