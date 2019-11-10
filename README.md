@@ -77,3 +77,17 @@ docker-compose down [-v]
 
 # Docker system prune - remove unused data
 docker system prune
+
+# Ubuntu go thru the commands mentioned here
+Add the docker group if it doesn't already exist:
+
+sudo groupadd docker
+Add the connected user "$USER" to the docker group. Change the user name to match your preferred user if you do not want to use your current user:
+
+sudo gpasswd -a $USER docker
+Either do a newgrp docker or log out/in to activate the changes to groups.
+sudo setfacl -m user:$USER:rw /var/run/docker.sock
+
+# shared volume ubuntu
+docker run -d -v /home/santosh/docker_test/ubuntu_php:/var/www/html -it  -p 9999:80 php_small 
+-d for dameon
