@@ -87,3 +87,7 @@ Add the connected user "$USER" to the docker group. Change the user name to matc
 sudo gpasswd -a $USER docker
 Either do a newgrp docker or log out/in to activate the changes to groups.
 sudo setfacl -m user:$USER:rw /var/run/docker.sock
+
+# shared volume ubuntu
+docker run -d -v /home/santosh/docker_test/ubuntu_php:/var/www/html -it  -p 9999:80 php_small 
+-d for dameon
