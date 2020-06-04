@@ -7,6 +7,9 @@ docker run -p 8080:80 php_test
 
 Here 8080 is localhost post 80 exposed port of container. You can browse http://localhost:8080 or http://172.17.0.2
 
+docker run -it tagname bash
+(for bash access)
+
 Docker with shared volume 
 
 docker run -it --mount type=bind,source=/var/www/html/docker_test,target=/var/www/html  --env-file=env_file php_test 
