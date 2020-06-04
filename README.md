@@ -28,6 +28,12 @@ Docker access local DB
 
 Some docker commands in hand
 
+docker build https://github.com/docker/rootfs.git#container:docker
+
+Here container is tag/branch. docker is subdirectory
+
+docker build -f <file_path_or_name>
+
 docker run --rm -it -p 192.168.99.100:3000:3000 docker-react
 
 --rm		Automatically remove the container when it exits
