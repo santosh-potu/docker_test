@@ -52,8 +52,12 @@ docker run --rm -it -p 192.168.99.100:3000:3000 react-demo
 
 //remove containers
 docker rm -f $(docker ps -aq)
+
 //images
 docker rmi -f $(docker images -aq)
+
+--all , -a		Show all images (default hides intermediate images)
+--quiet , -q		Only show numeric IDs
 
 images -> layers -> containers
 class -> inheritance -> instance 
