@@ -1,6 +1,6 @@
 
-Docker build 
-docker build -it php_test .
+Docker build: 
+docker build -t php_test .
 
 Docker with shared volume 
 
