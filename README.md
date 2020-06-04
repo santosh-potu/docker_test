@@ -31,16 +31,20 @@ Some docker commands in hand
 docker run --rm -it -p 192.168.99.100:3000:3000 docker-react
 
 --rm		Automatically remove the container when it exits
+
 --interactive , -i		Keep STDIN open even if not attached
+
 --tty , -t		Allocate a pseudo-TTY
 
-docker-machine ip default -- gets the virtual machine ip address
+docker-machine ip default -- gets the virtual machine ip address of machine 'default'
 
-docker build -t tagname .
 
 docker ps => list containers
+
 docker ps -a => list all container
+
 docker ps -a -p => list all container id's
+
 docker ps -l => list the last active container
 
 docker-machine ip default
