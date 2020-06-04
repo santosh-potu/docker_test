@@ -34,6 +34,8 @@ Here container is tag/branch. docker is subdirectory
 
 docker build -f <file_path_or_name>
 
+docker build -f ubuntu_php/php_small_docker -t php_small_docker .
+
 docker run --rm -it -p 192.168.99.100:3000:3000 docker-react
 
 --rm		Automatically remove the container when it exits
