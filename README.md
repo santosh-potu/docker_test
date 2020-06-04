@@ -97,6 +97,16 @@ docker container rm $(docker ps -aq)
 # remove all images
 docker rmi $(docker images -q)
 
+$ docker build -t test-pid .
+$ docker run -it -d --name t-pid test-pid
+
+--name		Assign a name to the container
+
+# Now let's run a shell to access the container:
+$ docker exec -it t-pid sh
+
+The docker exec command runs a new command in a running container.
+
 # docker compose
 docker-compose up
 docker-compose build <image_name_from_yml)
