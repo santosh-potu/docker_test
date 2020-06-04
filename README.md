@@ -58,8 +58,10 @@ docker ps -l => Show the latest created container (includes all states)
 docker-machine ip default
 docker run --rm -it -p 192.168.99.100:3000:3000 react-demo
 
-//remove containers
+//remove containers 
 docker rm -f $(docker ps -aq)
+
+--force , -f		Force the removal of a running container (uses SIGKILL)
 
 //images
 docker rmi -f $(docker images -aq)
