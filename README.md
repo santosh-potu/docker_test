@@ -109,6 +109,11 @@ $ docker exec -it t-pid sh
 
 The docker exec command runs a new command in a running container.
 
+# Docker inspect
+docker inspect <container-name/id>
+
+will tell you all details. even you can grep for your desired results like Ip address
+
 # docker compose
 docker-compose up
 docker-compose build <image_name_from_yml)
