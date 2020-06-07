@@ -1,0 +1,22 @@
+docker run -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=docker_test  -e MYSQL_ROOT_HOST=% -v /var/www/html/docker_test/mysql_files/docker_test_2.sql:/docker-entrypoint-initdb.d/init.sql --name mysql-1 -p 3306:3306 -it mysql:5.7.30  
+
+If Root password not specified, generatated at run time and will be dispalyed
+Database will be created on first run
+if u specifiy dierectories in above command all sql files will be exported and executed. above we specified single file
+MYSQL_ROOT_HOST is used to specify allow from multiple remote hosts by default it allows local host so here i added this param with % to allow from all
+
+docker run --name=mysql1 \
+--mount type=bind,src=/path-on-host-machine/scripts/,dst=/docker-entrypoint-initdb.d/ \
+-d mysql/mysql-server:tag
+
+Connect to MySQL from an Application in Another Docker Container
+By setting up a Docker network, you can allow multiple Docker containers to communicate with each other, so that a client application in another Docker container can access the MySQL Server in the server container. First, create a Docker network:
+
+docker network create my-custom-net
+Then, when you are creating and starting the server and the client containers, use the --network option to put them on network you created. For example:
+
+docker run --name=mysql1 --network=my-custom-net -d mysql/mysql-server
+docker run --name=myapp1 --network=my-custom-net -d myapp
+The myapp1 container can then connect to the mysql1 container with the mysql1 hostname and vice versa, as Docker automatically sets up a DNS for the given container names. In the following example, we run the mysql client from inside the myapp1 container to connect to host mysql1 in its own container:
+
+docker exec -it myapp1 mysql --host=mysql1 --user=myuser --password
