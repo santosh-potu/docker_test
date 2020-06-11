@@ -44,6 +44,8 @@ docker run --rm -it -p 192.168.99.100:3000:3000 docker-react
 
 --tty , -t		Allocate a pseudo-TTY
 
+-d runs as dameon (runs in background)
+
 docker-machine ip default -- gets the virtual machine ip address of machine 'default'
 
 
